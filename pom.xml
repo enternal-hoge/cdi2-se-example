@@ -12,7 +12,6 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<!-- <weld.version>2.3.3.Final</weld.version> -->
 	</properties>
 
 	<dependencies>
@@ -35,24 +34,24 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-
 	<build>
 		<plugins>
 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.0</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>exec-maven-plugin</artifactId>
-				<version>1.5.0</version>
-				<executions>
-					<execution>
-						<phase>test</phase>
-						<goals>
-							<goal>java</goal>
-						</goals>
-						<configuration>
-							<mainClass>eternal.hoge.cdi2.se.example.Main</mainClass>
-						</configuration>
-					</execution>
-				</executions>
+				<version>1.6.0</version>
+				<configuration>
+					<mainClass>eternal.hoge.cdi2.se.example.Main</mainClass>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
